@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        link(rel="stylesheet", href="/public/css/base.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+        title ZOOM
+    body
+        header
+            h1 ZOOM 
+        main
+            div#welcome
+                form    
+                    input(placeholder="room name", required, type="text")
+                    input.submit(type="submit", value="Enter Zoom")
+            div#call
+                div#myStream
+                    span.streamIndicator My Stream 
+                    span.streamIndicator Counterpart's Stream
+                    video#myFace(autoplay,playsinline, width="400", height="300")
+                    video#peerFace(autoplay,playsinline, width="400", height="300")
+                div#options    
+                    button#mute Mute
+                    button#camera Turn Camera Off
+                    select#cameras
+                div#messages
+                    ul
+                    div#forms
+                        form#message
+                            input(type="text", placeholder="Message", required)
+                            input(type="submit", value="Send") 
+        script(src="/socket.io/socket.io.js") 
+        script(src="/public/js/app.js")  
+
+        
+        
+
+
+
+
